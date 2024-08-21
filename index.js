@@ -13,7 +13,7 @@ app.get('/news', async (req, res) => {
     const country = 'in';
 
     try {
-        const response = await axios.get(`${BASE_URL}?country=${country}&category=${category}&apiKey=${NEWS_API_KEY}`);
+        const response = await axios.get(`${BASE_URL}?sources=techcrunch&apiKey=${NEWS_API_KEY}`);
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data from NewsAPI' });
